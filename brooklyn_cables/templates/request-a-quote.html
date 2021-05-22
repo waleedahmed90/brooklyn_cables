@@ -1,0 +1,126 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="container-fluid">
+    <div class="container">
+        <center>
+            <h3 class="shadow-sm p-3 mb-5" style="color:#1977db;">Request a quotation</h3>
+        </center>
+    </div>
+
+    {% if response_text %}
+
+        <div class="container-fluid">
+            <center>
+                <h3 style="color:#1977db;">Thank you for considering us</h3>
+                <p style="color:#1977db;">{{response_text}}</p>    
+            </center>
+        </div>
+        <div class="container-fluid">
+            <center>
+                <a class="btn btn-primary btn-lg" href="{% url 'home' %}" role="button">Go to Home Page</a>
+            </center>
+        </div>
+
+
+    {% else %}
+        <div class="container">
+            <div class="row">
+                <div class="col-md-2"></div>
+                <div class="col-md-8 shadow rounded p-5">
+                    <form action="calcQuote" method='post'>
+                        {% csrf_token %}
+                        <div class="mb-3">
+                            <div class="row">
+                                <div class="col">
+                                    <label class="form-label">First Name</label>
+                                    <input type="text" class="form-control" placeholder="First Name" name="firstName" required>
+                                </div>
+                                <div class="col">
+                                    <label class="form-label">Last Name</label>
+                                    <input type="text" class="form-control" placeholder="Last Name" name="lastName" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-label">Email</div>
+                                    <input type="email" class="form-control" placeholder="name@email.com" name="Email" required>
+                                </div>
+                                <div class="col">
+                                    <div class="form-label">Phone #:</div>
+                                    <input type="tel" class="form-control" placeholder="+1-222-333-4444" name="PhoneNumber">
+                                    <div id="phoneHelp" class="form-text">Mobile number preferred</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <div class="form-label">Organization Name</div>
+                            <input type="text" class="form-control" placeholder="Wiring and Sons..." name="orgName">
+                        </div>
+                        <div class="mb-3">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-label">Quantity required</div>
+                                    <input type="number" class="form-control" placeholder="Enter quantity" name="Quantity">
+                                    <div id="lengthHelp" class="form-text">(1 box = 1000 feet, 1000 feet = 304.8 meters).</div>
+                                    
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-label">Please describe quantity in one of the following units:</div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="quantityRadio" id="inlineRadio1" value="feet">
+                                        <label class="form-check-label" for="inlineRadio1">Feet</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="quantityRadio" id="inlineRadio3" value="boxes">
+                                        <label class="form-check-label" for="inlineRadio3">boxes</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-label">Select a product</div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="CAT6_Plenum_1000FT" name="prodType">
+                                        <label class="form-check-label" for="inlineCheckbox1">CAT6-Plenum-1000FT</label>
+                                    </div>
+                                    <!--insert more products here-->
+                                </div>
+                                <div class="col">
+                                    <div class="form-label">Select a Color</div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="blue" name="color">
+                                        <label class="form-check-label" for="inlineCheckbox1">Blue</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="white" name="color">
+                                        <label class="form-check-label" for="inlineCheckbox2">White</label>
+                                    </div>
+                                    <!--insert more colours here-->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <div class="form-label">Additional Comments</div>
+                            <textarea rows="3" class="form-control" placeholder="Write here ..." name="Comments"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Request Quotation</button>
+                    </form>
+                </div>
+                <div class="col-md-2"></div>
+            </div>
+        </div>
+    {% endif %}
+
+
+
+
+</div>
+
+{% endblock %}

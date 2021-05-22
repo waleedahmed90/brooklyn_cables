@@ -1,0 +1,161 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+
+<div class="container">
+    
+    <!-- Product Heading Row -->
+    <div class="row">
+        <div class="col-lg-3"></div>
+        <div class="col-lg-6">
+            <div class="container">
+                <h3 style="color:#1977db; text-align:center; font-weight:bold;">
+                    CAT6 - Plenum - (Blue)
+                </h3>
+            </div>
+        </div>
+        <div class="col-lg-3"></div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-lg-3"></div>
+        <div class="col-lg-6">
+            <div class="container">
+                <h6 style="color:rgba(0,0,0,.55); text-align:center;">
+                    Price: {{price}}
+                </h6>
+            </div>
+        </div>
+        <div class="col-lg-3"></div>
+    </div>
+    <div class="row">
+        <div class="col-lg-3"></div>
+        <div class="col-lg-6">
+            <div class="container">
+                <h6 style="color:rgba(0,0,0,.55); text-align:center;">
+                    Only {{items}} left in Stock
+                </h6>
+            </div>
+        </div>
+        <div class="col-lg-3"></div>
+        
+    </div>
+    <hr>
+
+    <!-- Insert row here optional -->
+
+    <!-- Description -->
+    <div class="row">
+        <div class="col-1 ">
+            <!-- Empty for spacing -->
+        </div>
+
+        <div class="col-4">
+            
+            <div class="container">
+                <div class="carousel" id="mainSlide">
+                  <div class="carousel-inner">
+                      <img class="w-100 d-block" src="{% static '/images/dabba_blue_front_r.png' %}" alt="">
+                  </div>
+                </div>
+            </div>
+                
+        </div>
+
+        <div class="col-1">
+            <!-- Empty for spacing -->
+        </div>
+
+        <div class="col-4">
+
+            <div class="row"></div>
+            
+            <br>
+            <br>
+            
+            <div class="row">
+                <div class="col">
+                    <div class="container">
+                        <h4 style="color:#1977db;">
+                            CAT6 - Plenum - 1000FT - Solid Copper
+                        </h4>
+                    </div>
+                </div>
+            </div>
+
+            <br>
+            
+            <div class="row">
+                <div class="col">
+                    <div class="container">
+                        <h5 style="color:#1977db;">
+                            23AWG 4 Pair
+                        </h5>
+                    </div>
+                </div>
+            </div>
+
+            <br>
+            
+            <div class="row">
+                <div class="col">
+                    <div class="container">
+                        <h5 style="color:#1977db;">
+                            550 MHz
+                        </h5>
+                    </div>
+                </div>
+            </div>
+
+            <br>
+            
+            <div class="row">
+                <div class="col">
+                    <div class="container">
+                        <h5 style="color:#1977db;">
+                            Unshielded Twisted Pair (UTP)
+                        </h5>
+                    </div>
+                </div>
+            </div>
+
+            <br>
+            
+            <div class="row">
+                <div class="col">
+                    <div class="container">
+                        <h5 style="color:#1977db;">
+                            Fluke Certified
+                        </h5>
+                    </div>
+                </div>
+            </div>
+            
+            <br>
+            <br>
+
+            <div class="row">
+                <div class="col">
+                    <div class="container">
+                        <a class="btn btn-primary btn-md" href="{% url 'all-products' %}" role="button">ORDER - NOW</a>
+                    </div>
+                </div>
+            </div>
+            
+            <br>
+            <br>
+
+        </div>
+
+        <div class="col-1">
+            <!-- Empty for spacing -->
+        </div>
+
+
+        
+    </div>
+</div>
+{% endblock %}
+

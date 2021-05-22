@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load static %}
+{% static "media" as baseUrl %}
+
+
+{% block content %}
+<div class="container">
+    <center>
+        <h3 class="shadow-sm p-3 mb-5" style="color:#1977db;">Our Products</h3>
+    </center>
+</div>
+
+    <div class="container mb-5 mt-5" style="margin-top: 110px;">
+        <div class="row">
+            {% for prod in prods %}
+            <!-- Card -->
+            <div class="col-md-4 hover-shadow">
+                <div class="card mt-3"> <!-- style="cursor: pointer;" -->
+                    <div class="product align-items-center m-2 text-center mt-3">
+                        <img src="{{prod.image_front.url}}" class="rounded mt-3 mb-4" width="160">
+                        <h5>{{prod.name}}</h5>
+                        <div class="mt-1 info">
+                            <span class="text d-block">
+                                {{prod.description}}
+                            </span>
+                            <span class="text d-block">
+                                {{prod.color}}
+                            </span>
+                            <span class="text" style="color:#1977db; font-weight: bold; font-size:20px;">
+                                {{prod.price}}
+                            </span>
+                        </div>
+                        <div class="price mt-1 text-dark ">
+                            <span>{{prod.left}} items left in stock</span>
+                        </div>
+                    </div>
+                    <a class="p-3 btn btn-primary btn-md" href="{% url 'prod_temp' ID=prod.id %}" role="button" style="font-weight: bold;">Click to View</a>   
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+
+
+
+{% endblock %}

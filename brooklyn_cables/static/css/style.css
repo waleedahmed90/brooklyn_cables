@@ -1,0 +1,26 @@
+.navbar{
+    background-color: #e8e8ea;
+    font-weight: bold;
+}
+
+.vertical {
+    border-left: 2px solid rgba(0,0,0,.55);
+    height: 60px;
+    left: 75%;
+}
+
+.dropdown-menu{
+    background-color: #e8e8ea;
+    font-weight: bold;
+    color: #2d68de;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: #1977db;
+}
+
+.dropdown-item{
+    color: #1977db;
+}
+
+

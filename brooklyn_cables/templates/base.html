@@ -1,0 +1,209 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Brooklyn Cables</title>
+    <link rel="icon" href="{% static '/images/favicon32.ico' %}">
+
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">    
+        
+    <!-- JavaScript Bundle with Popper Bootstrap 5.0.0 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+
+    <!-- Font Awesome Kit -->
+    <script src="https://kit.fontawesome.com/edaf9ce423.js" crossorigin="anonymous"></script>
+        
+    <!-- Style file CSS local-->
+    <link rel="stylesheet" href="{% static '/css/style.css' %}">
+
+    <!-- js script-->
+    <script src = "{% static '/js/script.js' %}"></script>
+</head>
+
+<body>
+
+<div class="container">
+    <nav class = "navbar navbar-expand-md navbar-light sticky-top">
+            <div class="container-fluid">
+                    <!-- Brand -->
+                    <a class="navbar-brand" href="{% url 'home' %}">
+                        <!-- Logo Image -->
+                        <img src="{% static '/images/testNavBarBrand.png' %}" alt="" class="img-responsive"><!-- class="d-inline-block align-middle mr-2" -->
+                        <!-- Logo Text -->
+                    </a>
+                
+                <!-- Toggle Button -->
+                <a href="#" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-menu1"><i class="navbar-toggler-icon"></i></a>
+                    <div class="navbar-collapse collapse" id="navbar-menu1"><!--  -->
+                        <div class="navbar-nav ms-auto"><!-- ms-auto -->
+                            <!--Home-->
+                            <a class="nav-item nav-link" href="{% url 'home' %}">Home</a>
+                            <!--Products-->
+                            <a class="nav-item nav-link" href="{% url 'all-products' %}">Products</a>
+                            <!--<div class="dropdown">
+                                <a class="nav-item nav-link dropdown-toggle" data-bs-toggle="dropdown" id="dropdown-menu" href="#Products">Products</a>
+                                <div class="dropdown-menu">
+                                    <a href="{% url 'product1' %}" class="dropdown-item small">Product1</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a href="{% url 'product2' %}" class="dropdown-item small">Product2</a>
+                                </div>
+                            </div>-->
+                            <!--Request-->
+                            <a class="nav-item nav-link" href="{% url 'RequestQuote' %}">Request a Quote</a>
+                            <!--Contact Us-->
+                            <a class="nav-item nav-link" href="{% url 'ContactUs' %}">Contact us</a>
+                            <!--About-->
+                            <a class="nav-item nav-link" href="{% url 'about' %}">About</a>
+                            <!--Search -->
+                            <!--<div class="search-bar123">
+                                <form class="d-flex">
+                                    <input class="form-control me-2" type="search" placeholder="Search a Product" aria-label="Search">
+                                    <button class="btn btn-outline-success" type="submit">Search</button>
+                                </form>
+                            </div>-->
+                        </div>
+                    </div>
+            </div>
+    </nav>
+</div>
+    
+    
+    <br>
+    <br>
+    <br>
+
+    {% block content %}
+
+    {% endblock %}
+
+ 
+
+<br>
+<div class="container">
+
+<!-- Footer -->
+<!-- Footer -->
+<footer class="text-center text-lg-start bg-light text-muted" style="background-color: #e8e8ea;">
+    <!-- Section: Social media -->
+    <section
+      class="d-flex justify-content-center  p-4 border-bottom"
+    ><!--justify-content-lg-between-->
+      <!-- Left -->
+      <div class="me-5 d-none d-lg-block" style="text-align:center; color: #1977db;">
+        <span>Get connected with us on social networks:</span>
+      </div>
+      <!-- Left -->
+  
+      <!-- Right -->
+      <div style="color:#1977db;">
+        <a href="https://www.facebook.com/Brooklyn-Cables-103109218227002/" class="me-4 text-reset">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="https://twitter.com/brooklyncables" class="me-4 text-reset">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="https://www.instagram.com/brooklyncables/" class="me-4 text-reset">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://www.linkedin.com/company/brooklyn-cables/" class="me-4 text-reset">
+          <i class="fab fa-linkedin"></i>
+        </a>
+      </div>
+      <!-- Right -->
+    </section>
+    <!-- Section: Social media -->
+  
+    <!-- Section: Links  -->
+    <section class="">
+      <div class="container text-center text-md-start mt-5">
+        <!-- Grid row -->
+        <div class="row mt-3">
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+            <!-- Content -->
+            <h6 class="text-uppercase fw-bold mb-4">
+              Brooklyn Networking Solutions Inc.
+            </h6>  
+            <p align="justify">
+                Cost effective, durable, stable, and long-term solutions for your networking needs. Let's expand together.
+            </p>
+          </div>
+          <!-- Grid column -->
+  
+          <!-- Grid column -->
+          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold mb-4">
+              Products
+            </h6>
+            <p>
+              <a href="{% url 'all-products' %}" class="text-reset">Products</a>
+            </p>
+            <!--<p>
+              <a href="#!" class="text-reset">React</a>
+            </p>
+            <p>
+              <a href="#!" class="text-reset">Vue</a>
+            </p>
+            <p>
+              <a href="#!" class="text-reset">Laravel</a>
+            </p>-->
+          </div>
+          <!-- Grid column -->
+  
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold mb-4">
+              Quick Links
+            </h6>
+            <p>
+              <a href="{% url 'RequestQuote' %}" class="text-reset">Quotation</a>
+            </p>
+            <p>
+              <a href="{% url 'ContactUs' %}" class="text-reset">Contact</a>
+            </p>
+            <p>
+              <a href="{% url 'about' %}" class="text-reset">About</a>
+            </p>
+          </div>
+          <!-- Grid column -->
+  
+          <!-- Grid column -->
+          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold mb-4">
+              Contact
+            </h6>
+            <p><i class="fas fa-home me-3"></i> Alexandria, 22306 VA, USA</p>
+            <p>
+              <i class="fas fa-envelope me-3"></i>
+              sales@brooklyncables.com
+            </p>
+            <p><i class="fas fa-phone me-3"></i> (+1) 202-878-1789</p>
+          </div>
+          <!-- Grid column -->
+        </div>
+        <!-- Grid row -->
+      </div>
+    </section>
+    <!-- Section: Links  -->
+  
+    <!-- Copyright -->
+    <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05); color:#1977db;">
+      © 2021 Copyright: All Rights Reserved by 
+      <a class="text-reset fw-bold" href="{% url 'home' %}">brooklyncables.com</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+  <!-- Footer --></div>
+
+<br>
+    
+</body>
+</html>

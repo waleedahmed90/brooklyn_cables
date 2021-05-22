@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="container-fluid">
+    <div class="container">
+        <h3 class="shadow-sm p-3 mb-5" style="color:#1977db;">About us</h3>
+        
+    </div>
+
+    <div class="container-fluid">
+        <div class="container">
+            <div class="row">
+                <div class="col-5">
+                    <h5 style="color:#1977db;">Who are we?</h5>
+                    <p align="justify">
+                        Brooklyn cables Inc., established in 2020, is a Virginia based cable supplier, engaged in providing pure copper bulk 
+                        ethernet cable for individual and business needs. We are exceeding our clients expectations everyday by providing best 
+                        quality and market competitive rates as compared to other suppliers. Our product is top of the list in terms of quality, 
+                        durability and afforability.
+                    </p>
+                    <br>
+                    <h5 style="color:#1977db;">What are we selling?</h5>
+                        <p align="justify">
+                            Following are the products that we are providing:
+                            <ul>
+                                <li>CAT6 - Plenum - 1000FT - Solid Copper (in blue color)</li>
+                                <li>CAT6 - Plenum - 1000FT - Solid Copper (in white color)</li>
+                            </ul>
+                            <br>
+                            To get a quotation, please fill the <a href="{% url 'RequestQuote' %}" style="color: #1977db;">Quotation Form.</a>
+                            
+                        </p>
+                    <br> 
+                    <h5 style="color:#1977db;">Our Policy</h5>
+                    <p align="justify">
+                        Brooklyn cables seeks to grow its business by satisfying our customers. We provide, cost effective, durable, stable, and long-term
+                        solutions to your networking needs. We value your hard earned money and promise that you will not regret choosing us.<br>
+                        <br>
+                        We would love to hear from you.<br>
+                        <br>
+                        If you have any queries or suggestions for improvement, feel free to write us by using our 
+                        <a href="{% url 'ContactUs' %}" style="color: #1977db;">Contact us </a>Form.
+                    </p>
+                </div>
+                <div class="col-2"></div>
+                <div class="col-5">
+                    <img class="w-100 d-block" src="{% static '/images/compare.jpg' %}" alt="">
+                </div>
+            </div>
+        </div>    
+    </div>
+</div>
+
+{% endblock %}
