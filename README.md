@@ -18,3 +18,9 @@ python		  3.8.5
 
 #Database
 mysql
+
+
+HOW TO RUN::
+
+download and install python --version 3.7 or higher
+
